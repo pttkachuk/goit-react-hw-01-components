@@ -1,31 +1,31 @@
 import PropTypes from 'prop-types';
-import { ProfileDiv, DescrProfile, ProfileList } from './profileStyled';
+import { ProfileDiv, DescrProfile, ProfileList, UserText, CityText, StatusText,SecondText } from './profileStyled';
 const Profile = ({ username, tag, location, avatar, stats: { followers, views, likes } }) => {
     return (
-<ProfileDiv className="profile">
-  <DescrProfile className="description">
+<ProfileDiv>
+  <DescrProfile>
     <img
       src={avatar}
       alt="User avatar"
-      className="avatar"
+    
     />
-    <p className="name">{username}</p>
-    <p className="tag">@{tag}</p>
-    <p className="location">{location}</p>
+    <UserText>{username}</UserText>
+    <p>@{tag}</p>
+    <CityText>{location}</CityText>
   </DescrProfile>
 
-  <ProfileList className="stats">
+  <ProfileList>
     <li>
-      <span className="label">Followers: </span>
-      <span className="quantity">{followers}</span>
+      <SecondText>Followers </SecondText>
+      <StatusText>{followers}</StatusText>
     </li>
     <li>
-      <span className="label">Views: </span>
-      <span className="quantity">{views}</span>
+      <SecondText>Views </SecondText>
+      <StatusText>{views}</StatusText>
     </li>
     <li>
-      <span className="label">Likes: </span>
-      <span className="quantity">{likes}</span>
+      <SecondText>Likes </SecondText>
+      <StatusText>{likes}</StatusText>
     </li>
   </ProfileList>
 </ProfileDiv>
