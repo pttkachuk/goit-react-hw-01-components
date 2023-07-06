@@ -1,28 +1,29 @@
 import PropTypes from 'prop-types';
+import { TransitionTable, TransitionHead, TransitionTitle, TransitionInfo, TransitionRow } from './TransactionListStyle';
 const TransactionList = ({ data }) => {
     return (
-        <table className="transaction-history">
-            <thead>
+        <TransitionTable>
+            <TransitionHead>
                 <tr>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Currency</th>
+                    <TransitionTitle>Type</TransitionTitle>
+                    <TransitionTitle>Amount</TransitionTitle>
+                    <TransitionTitle>Currency</TransitionTitle>
                 </tr>
-            </thead>
+            </TransitionHead>
 
             <tbody>
                 {data.map(({ id, type, amount, currency }) => {
                     return (
-                        <tr key={id} >
-                        <td>{type}</td>
-                        <td>{amount}</td>
-                        <td>{currency}</td>
-                    </tr>
+                        <TransitionRow key={id} >
+                        <TransitionInfo>{type}</TransitionInfo>
+                        <TransitionInfo>{amount}</TransitionInfo>
+                        <TransitionInfo>{currency}</TransitionInfo>
+                    </TransitionRow>
                     )
                     
                 })}
             </tbody>
-        </table>
+        </TransitionTable>
     )
 };
 
